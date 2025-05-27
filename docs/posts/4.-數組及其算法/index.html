@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>New DavBlog!~</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="數組也是對象，數組的元素相當對象的屬性, 數組是相同類型數據的有序集合，長度聲明中確定，每個數據稱一個元素，索引由零開始。
+內容：概念特點，常見操作，多維數組結構，算法
+聲明：
+type[] arr_name;
+type arr_name[];
+對基本類型和引用類型的調用
+數組初始化
+1.靜態初始 2.動態初始 3.默認初始
+1.：int[]a= {1,3,4,5,6};
+直接花括號定義
+數組遍歷與複製
+遍歷
+
+int [] s; s=new int[10]; s.length for循環方法；
+for-each 循環
+專用於讀取數組或容器中所有元素
+
+public static void main(String[] args) {  
+    int[] a = new int[10];  
+  
+    for (int i=0;i&lt;a.length; i&#43;&#43;){  
+        a[i]=i*2;  
+    }  
+    //臨時遍歷  
+    for (int i=0;i&lt;a.length; i&#43;&#43;){  
+        System.out.println(a[i]);  
+    }  
+    // for-each 只能全部元素全遍歷，簡單遍歷 
+    for (int bianli:a){  
+        System.out.println(bianli);  
+    }  
+}
+複製（copy)
+System.arraycopy(object srcArray, int srcPosition, object destinationArray, int destinationPosition, int length)">
+    <meta name="generator" content="Hugo 0.147.5">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://giiitdavid.github.io/posts/4.-%E6%95%B8%E7%B5%84%E5%8F%8A%E5%85%B6%E7%AE%97%E6%B3%95/">
+    
+
+    <meta property="og:url" content="https://giiitdavid.github.io/posts/4.-%E6%95%B8%E7%B5%84%E5%8F%8A%E5%85%B6%E7%AE%97%E6%B3%95/">
+  <meta property="og:site_name" content="New DavBlog!~">
+  <meta property="og:title" content="New DavBlog!~">
+  <meta property="og:description" content="數組也是對象，數組的元素相當對象的屬性, 數組是相同類型數據的有序集合，長度聲明中確定，每個數據稱一個元素，索引由零開始。 內容：概念特點，常見操作，多維數組結構，算法 聲明： type[] arr_name; type arr_name[]; 對基本類型和引用類型的調用
+數組初始化 1.靜態初始 2.動態初始 3.默認初始 1.：int[]a= {1,3,4,5,6}; 直接花括號定義
+數組遍歷與複製 遍歷 int [] s; s=new int[10]; s.length for循環方法； for-each 循環 專用於讀取數組或容器中所有元素 public static void main(String[] args) { int[] a = new int[10]; for (int i=0;i&lt;a.length; i&#43;&#43;){ a[i]=i*2; } //臨時遍歷 for (int i=0;i&lt;a.length; i&#43;&#43;){ System.out.println(a[i]); } // for-each 只能全部元素全遍歷，簡單遍歷 for (int bianli:a){ System.out.println(bianli); } } 複製（copy) System.arraycopy(object srcArray, int srcPosition, object destinationArray, int destinationPosition, int length)">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta itemprop="name" content="New DavBlog!~">
+  <meta itemprop="description" content="數組也是對象，數組的元素相當對象的屬性, 數組是相同類型數據的有序集合，長度聲明中確定，每個數據稱一個元素，索引由零開始。 內容：概念特點，常見操作，多維數組結構，算法 聲明： type[] arr_name; type arr_name[]; 對基本類型和引用類型的調用
+數組初始化 1.靜態初始 2.動態初始 3.默認初始 1.：int[]a= {1,3,4,5,6}; 直接花括號定義
+數組遍歷與複製 遍歷 int [] s; s=new int[10]; s.length for循環方法； for-each 循環 專用於讀取數組或容器中所有元素 public static void main(String[] args) { int[] a = new int[10]; for (int i=0;i&lt;a.length; i&#43;&#43;){ a[i]=i*2; } //臨時遍歷 for (int i=0;i&lt;a.length; i&#43;&#43;){ System.out.println(a[i]); } // for-each 只能全部元素全遍歷，簡單遍歷 for (int bianli:a){ System.out.println(bianli); } } 複製（copy) System.arraycopy(object srcArray, int srcPosition, object destinationArray, int destinationPosition, int length)">
+  <meta itemprop="wordCount" content="370">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="New DavBlog!~">
+  <meta name="twitter:description" content="數組也是對象，數組的元素相當對象的屬性, 數組是相同類型數據的有序集合，長度聲明中確定，每個數據稱一個元素，索引由零開始。 內容：概念特點，常見操作，多維數組結構，算法 聲明： type[] arr_name; type arr_name[]; 對基本類型和引用類型的調用
+數組初始化 1.靜態初始 2.動態初始 3.默認初始 1.：int[]a= {1,3,4,5,6}; 直接花括號定義
+數組遍歷與複製 遍歷 int [] s; s=new int[10]; s.length for循環方法； for-each 循環 專用於讀取數組或容器中所有元素 public static void main(String[] args) { int[] a = new int[10]; for (int i=0;i&lt;a.length; i&#43;&#43;){ a[i]=i*2; } //臨時遍歷 for (int i=0;i&lt;a.length; i&#43;&#43;){ System.out.println(a[i]); } // for-each 只能全部元素全遍歷，簡單遍歷 for (int bianli:a){ System.out.println(bianli); } } 複製（copy) System.arraycopy(object srcArray, int srcPosition, object destinationArray, int destinationPosition, int length)">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        New DavBlog!~
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>數組也是對象，數組的元素相當對象的屬性, 數組是相同類型數據的有序集合，長度聲明中確定，每個數據稱一個元素，索引由零開始。
+內容：概念特點，常見操作，多維數組結構，算法
+聲明：
+type[] arr_name;
+type arr_name[];
+對基本類型和引用類型的調用</p>
+<h4 id="數組初始化">數組初始化</h4>
+<p>1.靜態初始 2.動態初始 3.默認初始
+1.：int[]a= {1,3,4,5,6};
+直接花括號定義</p>
+<h4 id="數組遍歷與複製">數組遍歷與複製</h4>
+<h5 id="遍歷">遍歷</h5>
+<ol>
+<li>int [] s; s=new int[10]; s.length for循環方法；</li>
+<li>for-each 循環
+專用於讀取數組或容器中所有元素</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> a <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>10<span style="color:#f92672">]</span>;  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0;i<span style="color:#f92672">&lt;</span>a.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){  
+</span></span><span style="display:flex;"><span>        a<span style="color:#f92672">[</span>i<span style="color:#f92672">]=</span>i<span style="color:#f92672">*</span>2;  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//臨時遍歷  </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0;i<span style="color:#f92672">&lt;</span>a.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){  
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(a<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span>);  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// for-each 只能全部元素全遍歷，簡單遍歷 </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> bianli:a){  
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(bianli);  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="複製copy">複製（copy)</h5>
+<p>System.arraycopy(object srcArray, int srcPosition, object destinationArray, int destinationPosition, int length)</p>
+<pre tabindex="0"><code>System.arraycopy()
+</code></pre><p>java.util.Arrays 工具類</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">//Arrays 類  </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> aa <span style="color:#f92672">=</span>{1,2,3432,434,42,3};  
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(aa); <span style="color:#75715e">//只是輸出對象的地址  </span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Arrays.<span style="color:#a6e22e">toString</span>(aa)); <span style="color:#75715e">//輸出  </span>
+</span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">sort</span>(aa); <span style="color:#75715e">// 排序  </span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Arrays.<span style="color:#a6e22e">toString</span>(aa));  <span style="color:#75715e">//打印值而非內存位置</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;位置：&#34;</span><span style="color:#f92672">+</span>Arrays.<span style="color:#a6e22e">binarySearch</span>(aa, 3432));<span style="color:#75715e">//二分法查找  </span>
+</span></span><span style="display:flex;"><span>Arrays.<span style="color:#a6e22e">fill</span>(aa,2,4,100);  <span style="color:#75715e">//在aa的2到4填充值100</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Arrays.<span style="color:#a6e22e">toString</span>(aa));
+</span></span></code></pre></div><h3 id="多維數組">多維數組</h3>
+<p>實際開發很少用最多到二維數組（學到容器後一般使用容器，二維數組也少用了）
+聲明 int [][] a = new int</p>
+<pre tabindex="0"><code>//二維數組  
+//動態定義1  
+int [][] bb = new int[3][];  
+bb[0]=new int[2]; //第0位有兩個元素  
+bb[1]=new int[4]; //第1位有四個元素  
+bb[2]=new int[]{23,4455,555};//第3位有三個元素  
+//int a1[][]=new int[][4];//錯誤的非法  
+bb[0][0]=100;  //賦值
+bb[0][1]=200;  
+System.out.println(Arrays.toString(bb));  
+//靜態定義2
+int [][]cc={  
+        {2,3,4,5},  
+        {233,4},  
+        {33,44,55}  
+};  
+System.out.println(Arrays.toString(cc));
+</code></pre><h2 id="comparable-比較接口">Comparable 比較接口</h2>
+<p>用於數組多個對像比較，定義比較排序規則，在java中排序算法底層也依賴於此接口
+方法： public int compareTo(Object obj) // obj為要比較對象</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">compareTo</span>(Object o){
+</span></span><span style="display:flex;"><span>	Man man <span style="color:#f92672">=</span> (Man)o;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span><span style="color:#f92672">&lt;</span>man.<span style="color:#a6e22e">age</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1; <span style="color:#75715e">//小於返回-1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span><span style="color:#f92672">&gt;</span>man.<span style="color:#a6e22e">age</span>){
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> 1;  <span style="color:#75715e">//大於返回1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> 0;  <span style="color:#75715e">//等於返回0</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#75715e">//定義完Arrays.sort會調用的</span>
+</span></span></code></pre></div><h3 id="常見排序查找算法">常見排序，查找算法：</h3>
+<p><a href="https://visualgo.net/en">visualising data structures and algorithms through animation - VisuAlgo</a>  可視法算法理解</p>
+<h5 id="冒泡排序">冒泡排序</h5>
+<p>逐個相鄰比較交換位置
+手寫冒泡是基本要求</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.test2;  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Arrays;  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BubbleSort</span> {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args){  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> values <span style="color:#f92672">=</span> {3,1,6,8,9,0,7,4,5,2};  
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;原始順序：&#34;</span><span style="color:#f92672">+</span> Arrays.<span style="color:#a6e22e">toString</span>(values));  
+</span></span><span style="display:flex;"><span>        bubbleSortBetter(values);  
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;完&#34;</span>);  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bubbleSort</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> values){  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> temp; <span style="color:#75715e">//中間存放  </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0; i<span style="color:#f92672">&lt;</span>values.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){ <span style="color:#75715e">//控制輪次  </span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>0; j<span style="color:#f92672">&lt;</span>values.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span>1<span style="color:#f92672">-</span>i;j<span style="color:#f92672">++</span>){ <span style="color:#75715e">//控制元素  </span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (values<span style="color:#f92672">[</span>j<span style="color:#f92672">]&gt;</span>values<span style="color:#f92672">[</span>j<span style="color:#f92672">+</span>1<span style="color:#f92672">]</span>){  
+</span></span><span style="display:flex;"><span>                    temp <span style="color:#f92672">=</span> values<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span>;  
+</span></span><span style="display:flex;"><span>                    values<span style="color:#f92672">[</span>j<span style="color:#f92672">]=</span>values <span style="color:#f92672">[</span>j<span style="color:#f92672">+</span>1<span style="color:#f92672">]</span>;  
+</span></span><span style="display:flex;"><span>                    values<span style="color:#f92672">[</span>j<span style="color:#f92672">+</span>1<span style="color:#f92672">]=</span>temp;  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>                }  
+</span></span><span style="display:flex;"><span>            }  
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>((i<span style="color:#f92672">+</span>1)<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;輪排序&#34;</span><span style="color:#f92672">+</span>Arrays.<span style="color:#a6e22e">toString</span>(values));  
+</span></span><span style="display:flex;"><span>        }  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bubbleSortBetter</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> values){  
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//檢查是否有多餘的趟數，條件是沒有交換就停止  </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> temp;  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0; i<span style="color:#f92672">&lt;</span>values.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>){ <span style="color:#75715e">//控制輪次  </span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">boolean</span> sortflag <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j<span style="color:#f92672">=</span>0; j<span style="color:#f92672">&lt;</span>values.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span>1<span style="color:#f92672">-</span>i;j<span style="color:#f92672">++</span>){ <span style="color:#75715e">//控制元素  </span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (values<span style="color:#f92672">[</span>j<span style="color:#f92672">]&gt;</span>values<span style="color:#f92672">[</span>j<span style="color:#f92672">+</span>1<span style="color:#f92672">]</span>){  
+</span></span><span style="display:flex;"><span>                    temp <span style="color:#f92672">=</span> values<span style="color:#f92672">[</span>j<span style="color:#f92672">]</span>;  
+</span></span><span style="display:flex;"><span>                    values<span style="color:#f92672">[</span>j<span style="color:#f92672">]=</span>values <span style="color:#f92672">[</span>j<span style="color:#f92672">+</span>1<span style="color:#f92672">]</span>;  
+</span></span><span style="display:flex;"><span>                    values<span style="color:#f92672">[</span>j<span style="color:#f92672">+</span>1<span style="color:#f92672">]=</span>temp;  
+</span></span><span style="display:flex;"><span>                    sortflag <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;  
+</span></span><span style="display:flex;"><span>                }  
+</span></span><span style="display:flex;"><span>            }  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (sortflag){ <span style="color:#75715e">//如果仍然true 就break否則繼續  </span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span>;  
+</span></span><span style="display:flex;"><span>            }  
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>((i<span style="color:#f92672">+</span>1)<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;輪排序&#34;</span><span style="color:#f92672">+</span>Arrays.<span style="color:#a6e22e">toString</span>(values));  
+</span></span><span style="display:flex;"><span>        }  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="折半查找二分檢索">折半查找（二分檢索）</h3>
+<p>時間複雜度是 <strong>O(log n)</strong>
+二分搜尋算法要求輸入的數組必須是<strong>已排序</strong>的。如果數組未排序,需要先進行排序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BinarySearch</span> {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> <span style="color:#f92672">[]</span> value <span style="color:#f92672">=</span> {4,5,6,3,7,8,9,10,1,11,14,16,19,20};  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> target <span style="color:#f92672">=</span> 7;  
+</span></span><span style="display:flex;"><span>        Arrays.<span style="color:#a6e22e">sort</span>(value);  
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(Arrays.<span style="color:#a6e22e">toString</span>(value));  
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(target<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;index is:&#34;</span><span style="color:#f92672">+</span> binarySearch(value, target));  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">binarySearch</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> array, <span style="color:#66d9ef">int</span> value){  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> low <span style="color:#f92672">=</span>0;  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> high <span style="color:#f92672">=</span> array.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1; <span style="color:#75715e">//區間  </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> (low<span style="color:#f92672">&lt;=</span>high){  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">int</span> middle <span style="color:#f92672">=</span> low<span style="color:#f92672">+</span>(high<span style="color:#f92672">-</span>low)<span style="color:#f92672">/</span>2;  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (value <span style="color:#f92672">==</span> array<span style="color:#f92672">[</span>middle<span style="color:#f92672">]</span>){  
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> middle;  
+</span></span><span style="display:flex;"><span>            }  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (value <span style="color:#f92672">&gt;</span> array<span style="color:#f92672">[</span>middle<span style="color:#f92672">]</span>){  
+</span></span><span style="display:flex;"><span>                low <span style="color:#f92672">=</span> middle <span style="color:#f92672">+</span> 1;  
+</span></span><span style="display:flex;"><span>            }  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (value<span style="color:#f92672">&lt;</span>array<span style="color:#f92672">[</span>middle<span style="color:#f92672">]</span>){  
+</span></span><span style="display:flex;"><span>                high <span style="color:#f92672">=</span> middle <span style="color:#f92672">-</span> 1;  
+</span></span><span style="display:flex;"><span>            }  
+</span></span><span style="display:flex;"><span>        }  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span>1; <span style="color:#75715e">//循環完但未找到返回-1  </span>
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://giiitdavid.github.io/" >
+    &copy;  New DavBlog!~ 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>New DavBlog!~</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="異常機制，常用類，容器，數據結構，智能電話本實戰，IO流，多線程，網絡編程，反射技術，Lambda表達式。
+==異常機制Exception, Error==
+工作中程序如果存在各種條件不滿足造成報錯時稱為異常.
+所以要考慮各種所有異常情況來防止程序崩潰。
+例如Copy要文件存在，目標文件夾存在，空間是否足夠，IO流中途中斷。
+邏輯代碼和錯誤處理不應混合地寫，太複雜，JAVA中用TryCatch異常類來處理。
+try{JAVA語句}
+catch(Exception e){
+	e.printStackTrace();
+}
+java.lang.Throwable 拋出錯誤分為兩種：
+
+Error（JVM崩潰，重啟解決）
+Exception（程序異常）:
+RuntimeException：增加邏輯來規避讓程序執行
+CheckedException ：捕獲異常,先捕獲子類 ；
+
+解決方法：
+
+try{}&ndash;&gt;catch{}&ndash;&gt;finally(回收資源);
+throws Exception
+資源自動關閉（JDK7）try with resource:
+try(放在這裏的會自動.close){}
+自定義一個Exception
+感覺沒聽明白，可能講得不好，請求更多教材！！
+
+JAVA常用類原代碼學習
+(面試也考)
+包裝類8，字符串相關類，時間類，其他。
+基於面向對象
+包裝類
+使基本數據類型具對象特性：int, char包裝為Integer, Double等對象供需對象的場景使用
+含：Byte, Boolean, Short, Character, Integer, Long, Float, Double
+自動裝箱和拆箱
+Autoboxing &amp; Unboxing
+將基本數據類型和包裝類自動轉換,編譯器捷徑
+裝箱：
+Integer i = 100; //&lt;==&gt;Integer i = Integer.ValueOf(100);
+拆箱：
+Integer y=i; //&lt;==&gt;int y = i.intValue();
+自動裝箱時，［-128，127」之間有緩存
+MyInteger的思路懂但實現沒搞懂">
+    <meta name="generator" content="Hugo 0.147.5">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://giiitdavid.github.io/posts/5.-java%E5%9F%BA%E7%A4%8E%E6%B7%B1%E5%8C%96%E9%9B%9C%E9%A0%85/">
+    
+
+    <meta property="og:url" content="https://giiitdavid.github.io/posts/5.-java%E5%9F%BA%E7%A4%8E%E6%B7%B1%E5%8C%96%E9%9B%9C%E9%A0%85/">
+  <meta property="og:site_name" content="New DavBlog!~">
+  <meta property="og:title" content="New DavBlog!~">
+  <meta property="og:description" content="異常機制，常用類，容器，數據結構，智能電話本實戰，IO流，多線程，網絡編程，反射技術，Lambda表達式。
+==異常機制Exception, Error== 工作中程序如果存在各種條件不滿足造成報錯時稱為異常. 所以要考慮各種所有異常情況來防止程序崩潰。 例如Copy要文件存在，目標文件夾存在，空間是否足夠，IO流中途中斷。 邏輯代碼和錯誤處理不應混合地寫，太複雜，JAVA中用TryCatch異常類來處理。
+try{JAVA語句} catch(Exception e){ e.printStackTrace(); } java.lang.Throwable 拋出錯誤分為兩種：
+Error（JVM崩潰，重啟解決） Exception（程序異常）: RuntimeException：增加邏輯來規避讓程序執行 CheckedException ：捕獲異常,先捕獲子類 ； 解決方法： try{}–&gt;catch{}–&gt;finally(回收資源); throws Exception 資源自動關閉（JDK7）try with resource: try(放在這裏的會自動.close){} 自定義一個Exception 感覺沒聽明白，可能講得不好，請求更多教材！！ JAVA常用類原代碼學習 (面試也考) 包裝類8，字符串相關類，時間類，其他。 基於面向對象
+包裝類 使基本數據類型具對象特性：int, char包裝為Integer, Double等對象供需對象的場景使用 含：Byte, Boolean, Short, Character, Integer, Long, Float, Double
+自動裝箱和拆箱 Autoboxing &amp; Unboxing 將基本數據類型和包裝類自動轉換,編譯器捷徑 裝箱： Integer i = 100; //&lt;==&gt;Integer i = Integer.ValueOf(100); 拆箱： Integer y=i; //&lt;==&gt;int y = i.intValue(); 自動裝箱時，［-128，127」之間有緩存 MyInteger的思路懂但實現沒搞懂">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta itemprop="name" content="New DavBlog!~">
+  <meta itemprop="description" content="異常機制，常用類，容器，數據結構，智能電話本實戰，IO流，多線程，網絡編程，反射技術，Lambda表達式。
+==異常機制Exception, Error== 工作中程序如果存在各種條件不滿足造成報錯時稱為異常. 所以要考慮各種所有異常情況來防止程序崩潰。 例如Copy要文件存在，目標文件夾存在，空間是否足夠，IO流中途中斷。 邏輯代碼和錯誤處理不應混合地寫，太複雜，JAVA中用TryCatch異常類來處理。
+try{JAVA語句} catch(Exception e){ e.printStackTrace(); } java.lang.Throwable 拋出錯誤分為兩種：
+Error（JVM崩潰，重啟解決） Exception（程序異常）: RuntimeException：增加邏輯來規避讓程序執行 CheckedException ：捕獲異常,先捕獲子類 ； 解決方法： try{}–&gt;catch{}–&gt;finally(回收資源); throws Exception 資源自動關閉（JDK7）try with resource: try(放在這裏的會自動.close){} 自定義一個Exception 感覺沒聽明白，可能講得不好，請求更多教材！！ JAVA常用類原代碼學習 (面試也考) 包裝類8，字符串相關類，時間類，其他。 基於面向對象
+包裝類 使基本數據類型具對象特性：int, char包裝為Integer, Double等對象供需對象的場景使用 含：Byte, Boolean, Short, Character, Integer, Long, Float, Double
+自動裝箱和拆箱 Autoboxing &amp; Unboxing 將基本數據類型和包裝類自動轉換,編譯器捷徑 裝箱： Integer i = 100; //&lt;==&gt;Integer i = Integer.ValueOf(100); 拆箱： Integer y=i; //&lt;==&gt;int y = i.intValue(); 自動裝箱時，［-128，127」之間有緩存 MyInteger的思路懂但實現沒搞懂">
+  <meta itemprop="wordCount" content="342">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="New DavBlog!~">
+  <meta name="twitter:description" content="異常機制，常用類，容器，數據結構，智能電話本實戰，IO流，多線程，網絡編程，反射技術，Lambda表達式。
+==異常機制Exception, Error== 工作中程序如果存在各種條件不滿足造成報錯時稱為異常. 所以要考慮各種所有異常情況來防止程序崩潰。 例如Copy要文件存在，目標文件夾存在，空間是否足夠，IO流中途中斷。 邏輯代碼和錯誤處理不應混合地寫，太複雜，JAVA中用TryCatch異常類來處理。
+try{JAVA語句} catch(Exception e){ e.printStackTrace(); } java.lang.Throwable 拋出錯誤分為兩種：
+Error（JVM崩潰，重啟解決） Exception（程序異常）: RuntimeException：增加邏輯來規避讓程序執行 CheckedException ：捕獲異常,先捕獲子類 ； 解決方法： try{}–&gt;catch{}–&gt;finally(回收資源); throws Exception 資源自動關閉（JDK7）try with resource: try(放在這裏的會自動.close){} 自定義一個Exception 感覺沒聽明白，可能講得不好，請求更多教材！！ JAVA常用類原代碼學習 (面試也考) 包裝類8，字符串相關類，時間類，其他。 基於面向對象
+包裝類 使基本數據類型具對象特性：int, char包裝為Integer, Double等對象供需對象的場景使用 含：Byte, Boolean, Short, Character, Integer, Long, Float, Double
+自動裝箱和拆箱 Autoboxing &amp; Unboxing 將基本數據類型和包裝類自動轉換,編譯器捷徑 裝箱： Integer i = 100; //&lt;==&gt;Integer i = Integer.ValueOf(100); 拆箱： Integer y=i; //&lt;==&gt;int y = i.intValue(); 自動裝箱時，［-128，127」之間有緩存 MyInteger的思路懂但實現沒搞懂">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        New DavBlog!~
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>異常機制，常用類，容器，數據結構，智能電話本實戰，IO流，多線程，網絡編程，反射技術，Lambda表達式。</p>
+<h2 id="異常機制exception-error">==異常機制Exception, Error==</h2>
+<p>工作中程序如果存在各種條件不滿足造成報錯時稱為異常.
+所以要考慮各種所有異常情況來防止程序崩潰。
+例如Copy要文件存在，目標文件夾存在，空間是否足夠，IO流中途中斷。
+邏輯代碼和錯誤處理不應混合地寫，太複雜，JAVA中用TryCatch異常類來處理。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>{JAVA語句}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">catch</span>(Exception e){
+</span></span><span style="display:flex;"><span>	e.<span style="color:#a6e22e">printStackTrace</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>java.lang.Throwable 拋出錯誤分為兩種：</p>
+<ol>
+<li>Error（JVM崩潰，重啟解決）</li>
+<li>Exception（程序異常）:
+RuntimeException：增加邏輯來規避讓程序執行
+CheckedException ：捕獲異常,先捕獲子類 ；</li>
+</ol>
+<h5 id="解決方法">解決方法：</h5>
+<ol>
+<li><strong>try{}&ndash;&gt;catch{}&ndash;&gt;finally(回收資源);</strong></li>
+<li><strong>throws Exception</strong></li>
+<li>資源自動關閉（JDK7）<strong>try with resource</strong>:
+try(放在這裏的會自動.close){}</li>
+<li><strong>自定義一個Exception</strong>
+<em><strong>感覺沒聽明白，可能講得不好，請求更多教材！！</strong></em></li>
+</ol>
+<h2 id="java常用類原代碼學習">JAVA常用類原代碼學習</h2>
+<p>(面試也考)
+包裝類8，字符串相關類，時間類，其他。
+基於面向對象</p>
+<h3 id="包裝類">包裝類</h3>
+<p>使基本數據類型具對象特性：int, char包裝為Integer, Double等對象供需對象的場景使用
+含：Byte, Boolean, Short, Character, Integer, Long, Float, Double</p>
+<h3 id="自動裝箱和拆箱">自動裝箱和拆箱</h3>
+<p>Autoboxing &amp; Unboxing
+將基本數據類型和包裝類自動轉換,編譯器捷徑
+裝箱：
+<code>Integer i = 100; //&lt;==&gt;Integer i = Integer.ValueOf(100);</code>
+拆箱：
+<code>Integer y=i; //&lt;==&gt;int y = i.intValue();</code>
+自動裝箱時，［-128，127」之間有緩存
+MyInteger的思路懂但實現沒搞懂</p>
+<h3 id="string類">String類</h3>
+<p>String是不可變字符，可變字符序列有：
+StringBuffer:線程同步檢查安全，效率低；
+StringBuilder:線程不安全，效率高但在方法內適用
+常用方法：
+重載的public StringBuilder append(&hellip;)方法
+方法 public StringBuilder delete(int start, int end)
+方法 public StringBuilder delelteCharAt(int index)
+重載的public StringBuilder insert(&hellip;)方法
+方法 public StringBuilder reverse()
+方法public String to String()
+以及String類o似的indexOf, substring等</p>
+<p>字符序列陷阱，低級錯誤</p>
+<h3 id="時間處理相關類">時間處理相關類</h3>
+<p>1970.1.1時計算機世界的基凖時間
+用long表達時間
+java.util.Calendar
+java.util.Data
+java.text.DataFormat</p>
+<blockquote>
+<p>java.text.SimpleDateFormat</p></blockquote>
+<h5 id="date時間類javautildate">Date時間類（java.util.Date)</h5>
+<p>Date()
+Date(long date)
+boolean equals(Object obj)
+long getTime
+String toString()
+long nowDate = System.currentTimeMillis();
+int &rsquo;num&rsquo;L 指長整型</p>
+<h3 id="javatextdataformat">java.text.DataFormat</h3>
+<blockquote>
+<p>java.text.SimpleDateFormat 類</p></blockquote>
+<p>時間和字符串互相轉化
+有個時間格式字符表
+格式.format(日期時間)；//轉字符串
+格式.parse(格式化了的字符串日期)；//轉日期</p>
+<h3 id="calendar日曆類">Calendar日曆類</h3>
+<p>0表示1月起，因為外國是Jan, Feb這樣的；
+周日是0；
+GregorianCalendar類的使用
+GregorianCalendar calendar=new GregorianCalendar(日期);
+.add,.get的用法</p>
+<blockquote>
+<p>用得不多，用到再回看就行</p></blockquote>
+<h3 id="math類和random類">Math類和Random類</h3>
+<p>java.lang.Math:
+abs 絕對值
+acos, asin, atan, cos , sin, tan 三角函數
+sqrt 平方根
+pow (double a, double b) a的b次幂
+max (double a, double b) 取最大值
+min (double a, double b) 取最小值
+ceil(double a)    大於a的最小整數
+floor (double a) 大於a的最大整數
+random()            返回0.0到1.0的隨機數
+long round(double a) double型數據a轉為long型(四舍五入)
+toDegrees(double angrad) 弧度-&gt;角度
+toRadians(double angdeg) 角度-&gt;弧度
+Math.PI 常數
+Math.E 常數</p>
+<h5 id="javautilrandom類">java.util.Random類</h5>
+<p>random.nextDouble()
+random.nextInt(bound:10)
+random.nextFloat()
+random.nextBoolean()</p>
+<h3 id="file類">File類</h3>
+<p>java.io.File類
+File file = new File(&ldquo;文件&rdquo;);
+file.createNewFile();</p>
+<p>System.out.println(f.exists());<br>
+System.out.println(f.isDirectory());<br>
+System.out.println(f.isFile());<br>
+System.out.println(new Date(f.lastModified()));<br>
+System.out.println(f.length());<br>
+System.out.println(f.getName());<br>
+System.out.println(f.getAbsolutePath());</p>
+<p>file.delete();
+file.mkdir(目錄路徑); 創建一個目錄
+file.mkdirs(目錄路徑);</p>
+<h4 id="遞歸遍歷目錄並樹狀展示">遞歸遍歷目錄並樹狀展示</h4>
+<p>深度優先
+定義遞歸頭，遞歸體；背了它再理解它；</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> com.david;  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.io.File;  
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//遞歸打印目錄樹  </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrintFileTree</span> {  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {  
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">///Users/david/Documents/javaprojects/deeperJAVA/Common_class/src/com/david  </span>
+</span></span><span style="display:flex;"><span>        String a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/Users/david/Documents/javaprojects/deeperJAVA&#34;</span>;  
+</span></span><span style="display:flex;"><span>        File f <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> File(a);  
+</span></span><span style="display:flex;"><span>        printFile(f,0);  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printFile</span>(File file, <span style="color:#66d9ef">int</span> level){  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0; i<span style="color:#f92672">&lt;</span>level;i<span style="color:#f92672">++</span>){  
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;-&#34;</span>);  
+</span></span><span style="display:flex;"><span>        }  
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//print file name  </span>
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(file.<span style="color:#a6e22e">getName</span>());  
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(file.<span style="color:#a6e22e">isDirectory</span>()){  
+</span></span><span style="display:flex;"><span>            File<span style="color:#f92672">[]</span> files <span style="color:#f92672">=</span> file.<span style="color:#a6e22e">listFiles</span>();  
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (File temp:files){  
+</span></span><span style="display:flex;"><span>                printFile(temp, level<span style="color:#f92672">+</span>1);  
+</span></span><span style="display:flex;"><span>            }  
+</span></span><span style="display:flex;"><span>        }  
+</span></span><span style="display:flex;"><span>    }  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="枚舉enumerate列舉">枚舉enumerate（列舉）</h3>
+<p>java.lang.Enum類，少用其高級特性，亂
+enum 類名{
+內容1, 內容2, 內容3, &hellip;&hellip;
+}
+比起public static final int 更快捷和美觀，會自動分配序號</p>
+<h3 id="ctrlshiftt-單元測試">ctrl+shift+T ：單元測試</h3>
+<p>新建一個類：類名Test
+<code>@Test</code>
+斷言： 一種驗證代碼邏輯的語句，失敗時拋出AssertionError
+實現：
+<code> assert condition : failedmessage;</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Person person <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person(<span style="color:#e6db74">&#34;John&#34;</span>, 30);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> person.<span style="color:#a6e22e">getName</span>().<span style="color:#a6e22e">equals</span>(<span style="color:#e6db74">&#34;John&#34;</span>) : <span style="color:#e6db74">&#34;对象的名称应为 John&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> person.<span style="color:#a6e22e">getAge</span>() <span style="color:#f92672">==</span> 30 : <span style="color:#e6db74">&#34;对象的年龄应为 30&#34;</span>;
+</span></span></code></pre></div><p><strong>assertObjects 類包含以下方法：</strong></p>
+<ul>
+<li><code>assertEquals()</code>：验证两个对象是否相等。</li>
+<li><code>assertNotEquals()</code>：验证两个对象是否不相等。</li>
+<li><code>assertNull()</code>：验证一个对象是否为 null。</li>
+<li><code>assertNotNull()</code>：验证一个对象是否不为 null。</li>
+<li><code>assertTrue()</code>：验证一个布尔值是否为 true。</li>
+<li><code>assertFalse()</code>：验证一个布尔值是否为 false。</li>
+<li><code>assertSame()</code>：验证两个对象是否引用同一个实例。</li>
+<li><code>assertNotSame()</code>：验证两个对象是否引用不同实例。</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://giiitdavid.github.io/" >
+    &copy;  New DavBlog!~ 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

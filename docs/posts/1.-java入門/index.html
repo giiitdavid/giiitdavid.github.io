@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>New DavBlog!~</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="運行流程
+java&ndash;&gt;編譯器&ndash;＞字節碼&ndash;&gt;虛擬機JVM執行bytecode&ndash;&gt;系統機器執行
+^java是解釋型和編釋型混合語言
+JDK (- JRE (- JVM
+用記事本就可以打印一個java程序
+javac xxx.java
+main方法構造固定:
+public static void main(String[], args)
+每一個類都一個新的java檔
+入門DOS命令：
+cd, cd.., dir, cls&hellip;
+IDEA入門
+快捷鍵：
+sout = System.out.print();
+soutm = System.out.println(&ldquo;描述：所在類中的，所在方法&rdquo;)；//debug?
+main=public static void main
+類結構視圖：alt &#43; 7
+類源碼： ctrl＋右鍵
+自動生成構造器、get、set方法等：alt&#43;insert
+查看錯誤和可能建議：alt(option)&#43;enter，ctrl&#43;1or2，ctrl&#43;alt&#43;t
+查看方法的源頭：ctrl&#43;alt
+看繼承結構: ctrl&#43;H (Hierarchy)
+知識：
+src文件夾是原碼source code
+out 是編釋後的java
+入門編程
+
+標識符（類命名規範）：_ ,字母，$ 開頭 &ndash;&gt; 首字母大寫；不要命名為l或I（大寫i)的變量，容易混淆，long類型使用大寫L
+JAVA保留字又叫關鍵字；
+變量的聲明, 類型有局部變量（從屬於方法），成員變量（從屬於對象），靜態變量（static, 從屬於類）；
+常量，只能賦一次值  final double PI = 3.1413; 命名全用大寫，分隔用___，字符常量稱為3.1413， PI稱為符號常量
+操作較大數是留意是否溢出
+
+數據類型
+容量大的能自動兼容容量小的，反之報錯會損失精度或者隨機變值，要強制轉換[(int) a]或1L">
+    <meta name="generator" content="Hugo 0.147.5">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://giiitdavid.github.io/posts/1.-java%E5%85%A5%E9%96%80/">
+    
+
+    <meta property="og:url" content="https://giiitdavid.github.io/posts/1.-java%E5%85%A5%E9%96%80/">
+  <meta property="og:site_name" content="New DavBlog!~">
+  <meta property="og:title" content="New DavBlog!~">
+  <meta property="og:description" content="運行流程 java–&gt;編譯器–＞字節碼–&gt;虛擬機JVM執行bytecode–&gt;系統機器執行 ^java是解釋型和編釋型混合語言
+JDK (- JRE (- JVM
+用記事本就可以打印一個java程序 javac xxx.java
+main方法構造固定: public static void main(String[], args)
+每一個類都一個新的java檔
+入門DOS命令： cd, cd.., dir, cls…
+IDEA入門 快捷鍵： sout = System.out.print(); soutm = System.out.println(“描述：所在類中的，所在方法”)；//debug? main=public static void main 類結構視圖：alt &#43; 7 類源碼： ctrl＋右鍵 自動生成構造器、get、set方法等：alt&#43;insert 查看錯誤和可能建議：alt(option)&#43;enter，ctrl&#43;1or2，ctrl&#43;alt&#43;t 查看方法的源頭：ctrl&#43;alt 看繼承結構: ctrl&#43;H (Hierarchy)
+知識： src文件夾是原碼source code out 是編釋後的java
+入門編程 標識符（類命名規範）：_ ,字母，$ 開頭 –&gt; 首字母大寫；不要命名為l或I（大寫i)的變量，容易混淆，long類型使用大寫L JAVA保留字又叫關鍵字； 變量的聲明, 類型有局部變量（從屬於方法），成員變量（從屬於對象），靜態變量（static, 從屬於類）； 常量，只能賦一次值 final double PI = 3.1413; 命名全用大寫，分隔用___，字符常量稱為3.1413， PI稱為符號常量 操作較大數是留意是否溢出 數據類型 容量大的能自動兼容容量小的，反之報錯會損失精度或者隨機變值，要強制轉換[(int) a]或1L">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta itemprop="name" content="New DavBlog!~">
+  <meta itemprop="description" content="運行流程 java–&gt;編譯器–＞字節碼–&gt;虛擬機JVM執行bytecode–&gt;系統機器執行 ^java是解釋型和編釋型混合語言
+JDK (- JRE (- JVM
+用記事本就可以打印一個java程序 javac xxx.java
+main方法構造固定: public static void main(String[], args)
+每一個類都一個新的java檔
+入門DOS命令： cd, cd.., dir, cls…
+IDEA入門 快捷鍵： sout = System.out.print(); soutm = System.out.println(“描述：所在類中的，所在方法”)；//debug? main=public static void main 類結構視圖：alt &#43; 7 類源碼： ctrl＋右鍵 自動生成構造器、get、set方法等：alt&#43;insert 查看錯誤和可能建議：alt(option)&#43;enter，ctrl&#43;1or2，ctrl&#43;alt&#43;t 查看方法的源頭：ctrl&#43;alt 看繼承結構: ctrl&#43;H (Hierarchy)
+知識： src文件夾是原碼source code out 是編釋後的java
+入門編程 標識符（類命名規範）：_ ,字母，$ 開頭 –&gt; 首字母大寫；不要命名為l或I（大寫i)的變量，容易混淆，long類型使用大寫L JAVA保留字又叫關鍵字； 變量的聲明, 類型有局部變量（從屬於方法），成員變量（從屬於對象），靜態變量（static, 從屬於類）； 常量，只能賦一次值 final double PI = 3.1413; 命名全用大寫，分隔用___，字符常量稱為3.1413， PI稱為符號常量 操作較大數是留意是否溢出 數據類型 容量大的能自動兼容容量小的，反之報錯會損失精度或者隨機變值，要強制轉換[(int) a]或1L">
+  <meta itemprop="wordCount" content="322">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="New DavBlog!~">
+  <meta name="twitter:description" content="運行流程 java–&gt;編譯器–＞字節碼–&gt;虛擬機JVM執行bytecode–&gt;系統機器執行 ^java是解釋型和編釋型混合語言
+JDK (- JRE (- JVM
+用記事本就可以打印一個java程序 javac xxx.java
+main方法構造固定: public static void main(String[], args)
+每一個類都一個新的java檔
+入門DOS命令： cd, cd.., dir, cls…
+IDEA入門 快捷鍵： sout = System.out.print(); soutm = System.out.println(“描述：所在類中的，所在方法”)；//debug? main=public static void main 類結構視圖：alt &#43; 7 類源碼： ctrl＋右鍵 自動生成構造器、get、set方法等：alt&#43;insert 查看錯誤和可能建議：alt(option)&#43;enter，ctrl&#43;1or2，ctrl&#43;alt&#43;t 查看方法的源頭：ctrl&#43;alt 看繼承結構: ctrl&#43;H (Hierarchy)
+知識： src文件夾是原碼source code out 是編釋後的java
+入門編程 標識符（類命名規範）：_ ,字母，$ 開頭 –&gt; 首字母大寫；不要命名為l或I（大寫i)的變量，容易混淆，long類型使用大寫L JAVA保留字又叫關鍵字； 變量的聲明, 類型有局部變量（從屬於方法），成員變量（從屬於對象），靜態變量（static, 從屬於類）； 常量，只能賦一次值 final double PI = 3.1413; 命名全用大寫，分隔用___，字符常量稱為3.1413， PI稱為符號常量 操作較大數是留意是否溢出 數據類型 容量大的能自動兼容容量小的，反之報錯會損失精度或者隨機變值，要強制轉換[(int) a]或1L">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        New DavBlog!~
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="運行流程">運行流程</h3>
+<p>java&ndash;&gt;編譯器&ndash;＞字節碼&ndash;&gt;虛擬機JVM執行bytecode&ndash;&gt;系統機器執行
+^java是解釋型和編釋型混合語言</p>
+<p>JDK (- JRE (- JVM</p>
+<p>用記事本就可以打印一個java程序
+javac xxx.java</p>
+<p>main方法構造固定:
+public static void main(String[], args)</p>
+<p>每一個類都一個新的java檔</p>
+<h5 id="入門dos命令">入門DOS命令：</h5>
+<p>cd, cd.., dir, cls&hellip;</p>
+<h3 id="idea入門">IDEA入門</h3>
+<p>快捷鍵：
+sout = System.out.print();
+soutm = System.out.println(&ldquo;描述：所在類中的，所在方法&rdquo;)；//debug?
+main=public static void main
+類結構視圖：alt + 7
+類源碼： ctrl＋右鍵
+自動生成構造器、get、set方法等：alt+insert
+查看錯誤和可能建議：alt(option)+enter，ctrl+1or2，ctrl+alt+t
+查看方法的源頭：ctrl+alt
+看繼承結構: ctrl+H (Hierarchy)</p>
+<p>知識：
+src文件夾是原碼source code
+out 是編釋後的java</p>
+<h3 id="入門編程">入門編程</h3>
+<ol>
+<li>標識符（類命名規範）：_ ,字母，$ 開頭 &ndash;&gt; 首字母大寫；不要命名為l或I（大寫i)的變量，容易混淆，long類型使用大寫L</li>
+<li>JAVA保留字又叫關鍵字；</li>
+<li>變量的聲明, 類型有局部變量（從屬於方法），成員變量（從屬於對象），靜態變量（static, 從屬於類）；</li>
+<li>常量，只能賦一次值  <code>final double PI = 3.1413;</code> 命名全用大寫，分隔用___，字符常量稱為3.1413， PI稱為符號常量</li>
+<li>操作較大數是留意是否溢出</li>
+</ol>
+<h2 id="數據類型">數據類型</h2>
+<p>容量大的能自動兼容容量小的，反之報錯會損失精度或者隨機變值，要強制轉換[(int) a]或1L</p>
+<ol>
+<li>整數
+byte占1bit, short占2bit, int 占4bit(21億), long占8bit
+<strong>八進制整數以0開頭如015, 六進制以0x或0X如0x15, 二進制以0b或0B開頭如0b1110011</strong>
+數字和變量的類型是分開初始化的</li>
+<li>浮點數
+float占4bit，double占8bit.
+浮點數不精確，要精確要用BigDecimal</li>
+<li>字符串
+在java中不是一個基本數據類型，而是一個類
+轉義字符也稱控制符，如換行 &rsquo; \ n '</li>
+<li>布爾型(boolean)
+在內存中占一個bit或四個bit, 不可以使用0或非0代表（c語言），只能用true, false. if(b1){執行}</li>
+</ol>
+<h2 id="運算符">運算符</h2>
+<p>![[Pasted image 20241007224505.png]]</p>
+<h4 id="二元運算法則">二元運算法則：</h4>
+<p>long+*=long
+*+*=int
+float+float=float
+double+*=double
+int/int=int 直接舍去小數，不會四舍五入</p>
+<h4 id="賦值及其擴展賦值運算符">賦值及其擴展賦值運算符</h4>
+<p>+= &ndash;&gt; a+=b &ndash;&gt; a=a+b
+&hellip;&hellip;類似地-＝，/＝，&hellip;&hellip;</p>
+<h4 id="關系運算符">關系運算符</h4>
+<p>char 是能強制轉型成int的如 char a=&lsquo;h&rsquo; &ndash;&gt; int(a)&ndash;&gt;&lsquo;h&rsquo;的value</p>
+<h4 id="邏輯運算符">邏輯運算符</h4>
+<p>&amp;與1false&ndash;&gt;false，&amp;&amp;，｜或1true&ndash;&gt;true，｜｜，！取反，^異或&ndash;&gt;相同false, 不同true
+<strong>&amp;&amp;，｜｜短路版，一看到符合條件即完成,效率型</strong></p>
+<h3 id="位運算符">位運算符</h3>
+<pre tabindex="0"><code>~ 取返 
+a=5 // 0000 0101
+result = ~a // 1111 1010
+
+&amp; 按位與, 與兩數二進制比較，只有均為1的位才為1
+a = 5  # 二进制: 0000 0101
+b = 3  # 二进制: 0000 0011
+result = a &amp; b  # 结果: 0000 0001 （即 1）
+
+｜ 按位或,當兩數二進制比較其中有位為1時結果為1
+a = 5  # 二进制: 0000 0101
+b = 3  # 二进制: 0000 0011
+result = a | b  # 结果: 0000 0111 （即 7）
+
+^ 按位異或，當兩數二進制比較只有位值不同時才為1
+a = 5  # 二进制: 0000 0101
+b = 3  # 二进制: 0000 0011
+result = a ^ b  # 结果: 0000 0110 （即 6）
+
+&lt;&lt; 左移運算符, 左移1位相當於&#34;乘2&#34;,
+a = 3  # 二进制: 0000 0011
+result = a &lt;&lt; 1  # 结果: 0000 0110 （即 6，相当于 3 * 2）
+result = a &lt;&lt; 2  # 结果: 0000 1100 （即 12，相当于 3 * 2 * 2）
+
+&gt;&gt; 右移運算符, 右移走位相當於&#34;除2&#34;取其中商.
+a = 12  # 二进制: 0000 1100
+result = a &gt;&gt; 1  # 结果: 0000 0110 （即 6，相当于 12 / 2）
+result = a &gt;&gt; 2  # 结果: 0000 0011 （即 3，相当于 12／2/2＝12/4）
+</code></pre><h3 id="字符串連接符">字符串連接符</h3>
+<p>&ldquo;&quot;＋a+b 加空符使連接符成為字符串連接符</p>
+<h3 id="條件連接符快速if-else">條件連接符（快速if else)</h3>
+<p>String condition = score&lt;60? &ldquo;fail&rdquo;:&ldquo;pass&rdquo;;  //即符合為&quot;fail&rdquo;,不符合為&quot;pass&quot;</p>
+<h3 id="符號順序">符號順序</h3>
+<p>括號＞算術運算符（先乘除後加減）&gt;關系運算符&gt;邏輯運算符（非^&gt;&amp;與&gt;｜或）</p>
+<h3 id="scanner處理鍵盤輸入">Scanner處理鍵盤輸入</h3>
+<p>關鍵在於創建和賦值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Scanner s <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner(System.<span style="color:#a6e22e">in</span>);
+</span></span><span style="display:flex;"><span>String target <span style="color:#f92672">=</span> s.<span style="color:#a6e22e">nextLine</span>();
+</span></span></code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://giiitdavid.github.io/" >
+    &copy;  New DavBlog!~ 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>New DavBlog!~</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="前提概念
+
+方法： 一個黑盒完成一個任務，在其他語言中稱為function函數； 方法用於定義該類或其實例行為和功能實現。
+
+[修飾符］數據類型 方法名（形式參數）{JAVA語句；⋯⋯}
+沒有輸入輸出用void
+構建時叫形式參數，實用時叫實際參數
+2. 語句塊 {{這裏是語句塊}}
+3. overload重載：一個類定義多個名稱相同，方法不一樣。
+參數列表個數不同構成方法重載，參數類型不一樣構成重載。
+但僅參數名稱不同不構成重載，以及，返回值不同不構成重載。
+
+让程序员不需要记住多个方法名称， 只需要关注传递的参数即可。
+
+遞歸： 自己調自己, 在深度優先搜索會用到, 包含遞歸頭（不調用的頭，結束條件），遞歸體（調用自身方法） 依次調自己，內存＋＋＋，最後反方向依次返回。
+深入剖析斐波拉契数列 - 一无是处的研究僧 - 博客园
+
+心態
+概念非常多，後面全部都是面向對象
+類和對象&ndash;&gt;內存&ndash;&gt;this,static&ndash;&gt;繼承，封裝，多態&ndash;&gt;抽象類，內部類
+平常多看看複習
+我表哥(格)是我對象
+感性認識
+表的列field (表格字段) to field (類屬性)
+action to 方法method
+表的每行就是對象
+兩種解決方法思維，是代碼構建方式：
+不用協作構建面向過程&quot;執行者思維&quot; 到 複雜組成構建的面向對象&quot;設計者思維&quot;(製造汽車🚗)
+設計時，先從問題中找名詞，這些個名詞哪些名詞可作為類，根據問題決定類的屬性和方法 （類比寫詩，寫小說，不是一步到位的）
+對建屋來說，類class就是圖紙，然後建立一個個object, instance
+入門認識
+對一個class來說，含三種成員： 屬性field(靜態), 方法method(動態), 構造器 constructor.
+就可以new 一個對象 object
+new一個對象的過程：
+
+聲明對象名和類型&ndash;&gt;用new實例化對象&ndash;&gt;new用構造方法創建對象
+屬性不賦初始值就會自動賦0
+
+引用類型 s1 = new 構造器()；
+引用類型是四個字節保存內地地址
+構造器 Constructor
+構造器用於初始化邏輯不是創建對象用
+構造器通過new關鍵字調用，
+系統自動為類定義無參數的構造器，
+構造器方法名必須和類名一致，
+構造器沒有返回類型
+無參類系統會默認一個無參構造器及默認值，如果定義一個無參構造器則可以初始化；
+帶參構造器允許在創建對象時傳遞參數來定制對象初始狀態；
+構造器重載方便應對多種輸入">
+    <meta name="generator" content="Hugo 0.147.5">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://giiitdavid.github.io/posts/3.-java%E9%9D%A2%E5%90%91%E5%B0%8D%E8%B1%A1%E5%85%A5%E9%96%80/">
+    
+
+    <meta property="og:url" content="https://giiitdavid.github.io/posts/3.-java%E9%9D%A2%E5%90%91%E5%B0%8D%E8%B1%A1%E5%85%A5%E9%96%80/">
+  <meta property="og:site_name" content="New DavBlog!~">
+  <meta property="og:title" content="New DavBlog!~">
+  <meta property="og:description" content="前提概念 方法： 一個黑盒完成一個任務，在其他語言中稱為function函數； 方法用於定義該類或其實例行為和功能實現。 [修飾符］數據類型 方法名（形式參數）{JAVA語句；⋯⋯} 沒有輸入輸出用void 構建時叫形式參數，實用時叫實際參數 2. 語句塊 {{這裏是語句塊}} 3. overload重載：一個類定義多個名稱相同，方法不一樣。 參數列表個數不同構成方法重載，參數類型不一樣構成重載。 但僅參數名稱不同不構成重載，以及，返回值不同不構成重載。
+让程序员不需要记住多个方法名称， 只需要关注传递的参数即可。
+遞歸： 自己調自己, 在深度優先搜索會用到, 包含遞歸頭（不調用的頭，結束條件），遞歸體（調用自身方法） 依次調自己，內存＋＋＋，最後反方向依次返回。 深入剖析斐波拉契数列 - 一无是处的研究僧 - 博客园 心態 概念非常多，後面全部都是面向對象 類和對象–&gt;內存–&gt;this,static–&gt;繼承，封裝，多態–&gt;抽象類，內部類 平常多看看複習 我表哥(格)是我對象
+感性認識 表的列field (表格字段) to field (類屬性) action to 方法method 表的每行就是對象
+兩種解決方法思維，是代碼構建方式： 不用協作構建面向過程&#34;執行者思維&#34; 到 複雜組成構建的面向對象&#34;設計者思維&#34;(製造汽車🚗)
+設計時，先從問題中找名詞，這些個名詞哪些名詞可作為類，根據問題決定類的屬性和方法 （類比寫詩，寫小說，不是一步到位的）
+對建屋來說，類class就是圖紙，然後建立一個個object, instance
+入門認識 對一個class來說，含三種成員： 屬性field(靜態), 方法method(動態), 構造器 constructor. 就可以new 一個對象 object new一個對象的過程：
+聲明對象名和類型–&gt;用new實例化對象–&gt;new用構造方法創建對象 屬性不賦初始值就會自動賦0 引用類型 s1 = new 構造器()； 引用類型是四個字節保存內地地址
+構造器 Constructor 構造器用於初始化邏輯不是創建對象用 構造器通過new關鍵字調用， 系統自動為類定義無參數的構造器， 構造器方法名必須和類名一致， 構造器沒有返回類型 無參類系統會默認一個無參構造器及默認值，如果定義一個無參構造器則可以初始化； 帶參構造器允許在創建對象時傳遞參數來定制對象初始狀態； 構造器重載方便應對多種輸入">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+
+  <meta itemprop="name" content="New DavBlog!~">
+  <meta itemprop="description" content="前提概念 方法： 一個黑盒完成一個任務，在其他語言中稱為function函數； 方法用於定義該類或其實例行為和功能實現。 [修飾符］數據類型 方法名（形式參數）{JAVA語句；⋯⋯} 沒有輸入輸出用void 構建時叫形式參數，實用時叫實際參數 2. 語句塊 {{這裏是語句塊}} 3. overload重載：一個類定義多個名稱相同，方法不一樣。 參數列表個數不同構成方法重載，參數類型不一樣構成重載。 但僅參數名稱不同不構成重載，以及，返回值不同不構成重載。
+让程序员不需要记住多个方法名称， 只需要关注传递的参数即可。
+遞歸： 自己調自己, 在深度優先搜索會用到, 包含遞歸頭（不調用的頭，結束條件），遞歸體（調用自身方法） 依次調自己，內存＋＋＋，最後反方向依次返回。 深入剖析斐波拉契数列 - 一无是处的研究僧 - 博客园 心態 概念非常多，後面全部都是面向對象 類和對象–&gt;內存–&gt;this,static–&gt;繼承，封裝，多態–&gt;抽象類，內部類 平常多看看複習 我表哥(格)是我對象
+感性認識 表的列field (表格字段) to field (類屬性) action to 方法method 表的每行就是對象
+兩種解決方法思維，是代碼構建方式： 不用協作構建面向過程&#34;執行者思維&#34; 到 複雜組成構建的面向對象&#34;設計者思維&#34;(製造汽車🚗)
+設計時，先從問題中找名詞，這些個名詞哪些名詞可作為類，根據問題決定類的屬性和方法 （類比寫詩，寫小說，不是一步到位的）
+對建屋來說，類class就是圖紙，然後建立一個個object, instance
+入門認識 對一個class來說，含三種成員： 屬性field(靜態), 方法method(動態), 構造器 constructor. 就可以new 一個對象 object new一個對象的過程：
+聲明對象名和類型–&gt;用new實例化對象–&gt;new用構造方法創建對象 屬性不賦初始值就會自動賦0 引用類型 s1 = new 構造器()； 引用類型是四個字節保存內地地址
+構造器 Constructor 構造器用於初始化邏輯不是創建對象用 構造器通過new關鍵字調用， 系統自動為類定義無參數的構造器， 構造器方法名必須和類名一致， 構造器沒有返回類型 無參類系統會默認一個無參構造器及默認值，如果定義一個無參構造器則可以初始化； 帶參構造器允許在創建對象時傳遞參數來定制對象初始狀態； 構造器重載方便應對多種輸入">
+  <meta itemprop="wordCount" content="812">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="New DavBlog!~">
+  <meta name="twitter:description" content="前提概念 方法： 一個黑盒完成一個任務，在其他語言中稱為function函數； 方法用於定義該類或其實例行為和功能實現。 [修飾符］數據類型 方法名（形式參數）{JAVA語句；⋯⋯} 沒有輸入輸出用void 構建時叫形式參數，實用時叫實際參數 2. 語句塊 {{這裏是語句塊}} 3. overload重載：一個類定義多個名稱相同，方法不一樣。 參數列表個數不同構成方法重載，參數類型不一樣構成重載。 但僅參數名稱不同不構成重載，以及，返回值不同不構成重載。
+让程序员不需要记住多个方法名称， 只需要关注传递的参数即可。
+遞歸： 自己調自己, 在深度優先搜索會用到, 包含遞歸頭（不調用的頭，結束條件），遞歸體（調用自身方法） 依次調自己，內存＋＋＋，最後反方向依次返回。 深入剖析斐波拉契数列 - 一无是处的研究僧 - 博客园 心態 概念非常多，後面全部都是面向對象 類和對象–&gt;內存–&gt;this,static–&gt;繼承，封裝，多態–&gt;抽象類，內部類 平常多看看複習 我表哥(格)是我對象
+感性認識 表的列field (表格字段) to field (類屬性) action to 方法method 表的每行就是對象
+兩種解決方法思維，是代碼構建方式： 不用協作構建面向過程&#34;執行者思維&#34; 到 複雜組成構建的面向對象&#34;設計者思維&#34;(製造汽車🚗)
+設計時，先從問題中找名詞，這些個名詞哪些名詞可作為類，根據問題決定類的屬性和方法 （類比寫詩，寫小說，不是一步到位的）
+對建屋來說，類class就是圖紙，然後建立一個個object, instance
+入門認識 對一個class來說，含三種成員： 屬性field(靜態), 方法method(動態), 構造器 constructor. 就可以new 一個對象 object new一個對象的過程：
+聲明對象名和類型–&gt;用new實例化對象–&gt;new用構造方法創建對象 屬性不賦初始值就會自動賦0 引用類型 s1 = new 構造器()； 引用類型是四個字節保存內地地址
+構造器 Constructor 構造器用於初始化邏輯不是創建對象用 構造器通過new關鍵字調用， 系統自動為類定義無參數的構造器， 構造器方法名必須和類名一致， 構造器沒有返回類型 無參類系統會默認一個無參構造器及默認值，如果定義一個無參構造器則可以初始化； 帶參構造器允許在創建對象時傳遞參數來定制對象初始狀態； 構造器重載方便應對多種輸入">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        New DavBlog!~
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h4 id="前提概念">前提概念</h4>
+<ol>
+<li>方法： 一個黑盒完成一個任務，在其他語言中稱為function函數； 方法用於定義該類或其實例行為和功能實現。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">[</span>修飾符<span style="color:#960050;background-color:#1e0010">］</span>數據類型 方法名<span style="color:#960050;background-color:#1e0010">（</span>形式參數<span style="color:#960050;background-color:#1e0010">）</span>{JAVA語句<span style="color:#960050;background-color:#1e0010">；⋯⋯</span>}
+</span></span></code></pre></div><p>沒有輸入輸出用void
+構建時叫形式參數，實用時叫實際參數
+2. 語句塊 {{這裏是語句塊}}
+3. overload重載：一個類定義多個名稱相同，方法不一樣。
+參數列表個數不同構成方法重載，參數類型不一樣構成重載。
+但僅參數名稱不同不構成重載，以及，返回值不同不構成重載。</p>
+<blockquote>
+<p>让程序员不需要记住多个方法名称， 只需要关注传递的参数即可。</p></blockquote>
+<ol start="4">
+<li>遞歸： 自己調自己, 在深度優先搜索會用到, 包含遞歸頭（不調用的頭，結束條件），遞歸體（調用自身方法） 依次調自己，內存＋＋＋，最後反方向依次返回。
+<a href="https://www.cnblogs.com/Chang-LeHung/p/16485137.html">深入剖析斐波拉契数列 - 一无是处的研究僧 - 博客园</a></li>
+</ol>
+<h3 id="心態">心態</h3>
+<p>概念非常多，後面全部都是面向對象
+類和對象&ndash;&gt;內存&ndash;&gt;this,static&ndash;&gt;繼承，封裝，多態&ndash;&gt;抽象類，內部類
+平常多看看複習
+我表哥(格)是我對象</p>
+<h5 id="感性認識">感性認識</h5>
+<p>表的列field (表格字段) to field (類屬性)
+action to 方法method
+表的每行就是對象</p>
+<p>兩種解決方法思維，是代碼構建方式：
+不用協作構建面向過程&quot;執行者思維&quot; 到 複雜組成構建的面向對象&quot;設計者思維&quot;(製造汽車🚗)</p>
+<p>設計時，先從問題中找名詞，這些個名詞哪些名詞可作為類，根據問題決定類的屬性和方法 （類比寫詩，寫小說，不是一步到位的）</p>
+<p>對建屋來說，類class就是圖紙，然後建立一個個object, instance</p>
+<h4 id="入門認識">入門認識</h4>
+<p>對一個class來說，含三種成員： 屬性field(靜態), 方法method(動態), 構造器 constructor.
+就可以new 一個對象 object
+new一個對象的過程：</p>
+<ul>
+<li>聲明對象名和類型&ndash;&gt;用new實例化對象&ndash;&gt;new用構造方法創建對象
+屬性不賦初始值就會自動賦0</li>
+</ul>
+<p>引用類型 s1 = new 構造器()；
+引用類型是四個字節保存內地地址</p>
+<h3 id="構造器-constructor">構造器 Constructor</h3>
+<p>構造器用於初始化邏輯不是創建對象用
+<strong>構造器通過new關鍵字調用</strong>，
+系統自動為類定義無參數的構造器，
+構造器方法名必須和類名一致，
+構造器沒有返回類型
+無參類系統會默認一個無參構造器及默認值，如果定義一個無參構造器則可以初始化；
+帶參構造器允許在創建對象時傳遞參數來定制對象初始狀態；
+構造器重載方便應對多種輸入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Constructor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Person</span>(String name, <span style="color:#66d9ef">int</span> age) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 不用急着定義age,讓實例時簡單點，實例化之後再Person.setAge(18);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAge</span>(<span style="color:#66d9ef">int</span> age){<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getAge</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> age;}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>main{
+</span></span><span style="display:flex;"><span>Person person <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person(<span style="color:#e6db74">&#34;Alice&#34;</span>, 25);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="內存模型為了更好輔助理解oop">內存模型(為了更好輔助理解OOP)：</h3>
+<p>源代碼&ndash;&gt;方法區&ndash;&gt;堆heap0x12&lt;&mdash;&gt;棧stack main()的棧幀
+<strong>虛擬機內存模型：</strong>
+<strong>棧：</strong>
+每個方法調用都會創建一個棧幀
+每個線程創建一個棧
+棧屬於線程私有，不能線程間共享
+棧先進後出，後進先出
+棧由系統自動分配，速度快，是一個連續的內存空間
+<strong>堆：</strong>
+堆用於儲存創建好的對象和數組
+JVM只有一個堆，被所有線程共享
+堆的內存空間不連續，分配靈活，速度慢
+堆被所線程共享，會被垃圾回收器劃分
+方法區也是堆</p>
+<p>垃圾回收機制解決了C++最難搞的內存管理：堆中對象的管理
+過程： 發現無用&ndash;&gt;回收
+算法：</p>
+<ol>
+<li>引用計數法，計數器為就清空，但對互相引用的對象清不了</li>
+<li><strong>引用可達法（根搜索）</strong>：圖搜索
+堆內存模型的垃圾回收：
+年輕代。。。。。。
+Eden區&ndash;&gt;Survivor1&lt;&mdash;&lt;=15次複製(判斷重要性地複製)&mdash;&gt;Survivor2
+👷：MinorGC ：滿了就去清理
+&gt;15次&ndash;&gt;年老代Tenured⋯⋯永久代（JDK8之前）
+👷：MajorGC
+🚛 Full GC：全域清理，年老代永久代寫滿，手動可能調用，啟動性能成本較高，由系統全權決定。
+#JVM調優  14-內存泄漏_垃圾回收機制總結_。 System.gc()通知系統FullGC</li>
+</ol>
+<h4 id="類的定義">類的定義</h4>
+<p><code>public</code> 或 <code>static</code> 成员通常直接放在类的内部大括号 <code>{}</code> 中，因为它们是属于该类的成员方法或静态方法。一般放在類內部。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">instanceMethod</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 實例方法，與類實例綁定，只有對象被創建後才能用，有參的還要構造器</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">staticMethod</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 靜態方法，不依賴實例，直接通過類名調用</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="構造器的重載overload">構造器的重載(overload)</h4>
+<p>類似方法的重載，方便建造對象時應對不同的屬性情況
+在IDEA中右鍵generate一個構造器很方便</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>一句話總結<span style="color:#960050;background-color:#1e0010">：</span>重載是給function適配用<span style="color:#960050;background-color:#1e0010">，</span>重寫是給細化子類繼承方法用<span style="color:#960050;background-color:#1e0010">。</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Overload</span> <span style="color:#75715e">//multi para type</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CalADD</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>b;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">double</span> a, <span style="color:#66d9ef">double</span> b){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>b;}
+</span></span><span style="display:flex;"><span>	pubic <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b , <span style="color:#66d9ef">int</span> c){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>b<span style="color:#f92672">+</span>c;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@Override</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Animal</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">voice</span>(){
+</span></span><span style="display:flex;"><span>	 sout(<span style="color:#e6db74">&#34;voice&#34;</span>);}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cat</span> <span style="color:#66d9ef">extends</span> Animal{
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">voice</span>(){
+</span></span><span style="display:flex;"><span>	sout(<span style="color:#960050;background-color:#1e0010">&#39;</span>meow<span style="color:#960050;background-color:#1e0010">&#39;</span>);}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span>(){
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args){
+</span></span><span style="display:flex;"><span>		Animal animal <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Animal();
+</span></span><span style="display:flex;"><span>		animal.<span style="color:#a6e22e">voice</span>();
+</span></span><span style="display:flex;"><span>		Cat mycat <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Cat();
+</span></span><span style="display:flex;"><span>		mycat.<span style="color:#a6e22e">voice</span>();
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="細節語句">細節語句</h3>
+<h4 id="this語句">this語句：</h4>
+<p>this作為普通方法的隱式參數，表示當前對象 this.變量
+不能用於static方法中
+用於重載的構造器中，可調用無參或其他重載有參的構造器，並且必須位於第一行</p>
+<h4 id="static-關鍵字">static 關鍵字</h4>
+<p>位於方法區中只有一份
+static方法不能調用非靜態成員。
+static初始化塊 ： 類一加載時就會執行，main()空的也執行，用於初始化靜態屬性 static{ field1; method;}
+學完繼承再回來看：會上溯父類的static塊，構造器執行也是。</p>
+<h4 id="不同變量分類和作用域">不同變量分類和作用域</h4>
+<p>棧Stack〖方法〗局部變量：從聲明開始到方法結束，不含static，定義在方法內 int a=0;
+堆Heap〖對象〗成員變量：與對象創建和消失同步，定義在類內但方法外，可以修飾權限 public String name;
+方法區〖類〗 類靜態變量：類加載就有效，所有類對象實例共享，必須用static聲明 static int namecount = 0;</p>
+<h4 id="包機制packageimport">包機制(package、import)</h4>
+<p><strong>包：</strong> 用於管理類，用於解決類的重名問題，相當於文件夾對於文件的作用。
+<strong>包命名</strong>是域命倒着寫：com.oracle.test; com&ndash;&gt;oracle&mdash;&gt;test是這樣的狀態
+包名間不代表有從屬關系
+<strong>實際項目應用建議都用包結構先</strong>
+在src中NewPakage
+<strong>常見java包</strong>： java.lang 默認加載核心包； java.awt 窗口包；java.net; java.io ; java.util 實用工具包；
+<strong>調用</strong>用import, 簡化路徑般的調用，直接引入，但類同名時就只能用包名＋類名導入
+導用包所有類會降低編譯速度，因要檢查實際用了哪些類, (編譯優化)；
+靜態導入(import static)：導入靜態類</p>
+<h2 id="面向對象的三大特性">面向對象的三大特性：</h2>
+<p>（入門）繼承、封裝、多態
+起點，對象我們天天搞</p>
+<h3 id="繼承-extends">繼承 extends</h3>
+<p>不要重新發明車輪，而去改善它
+幫助代碼複用，實現類擴展；方便邏輯建模；</p>
+<p><strong>實現</strong>： 父類，子類
+class 子類 extends 父類{
+代碼塊；
+構造器；
+}
+別忘了寫構造器～！
+父類的父類隱式地繼承Object類</p>
+<p><strong>instanceof 運算符</strong>，返回屬於布爾林值
+System.out.println(對象 instanceof 類)；</p>
+<p>注意： <strong>Java只有單繼承</strong>，只有一個爸爸，但<strong>接口可以多繼承</strong>
+C++則可以多繼承
+子類繼承父類，全部屬性和方法都能繼承，除了私有屬性和方法以及構造器。</p>
+<h5 id="繼承方法重寫override-不是重載哦">繼承方法重寫override (不是重載哦！):</h5>
+<p>實現多態的必要條件
+返回值要小於等於父類
+指在子類中重新定義父類中的方法，原父類方法被覆蓋，但沒有刪除
+<strong>學完聲明異常和封裝訪問權限再回來看看</strong>
+實現：
+<code>@Override</code>
+<strong>public</strong> void 原方法名 {新的代碼} //方法名稱初始化一致</p>
+<p>離1萬行代碼還有多少？</p>
+<p><strong>final關鍵字：</strong>
+不可修改功能的一個修飾詞：
+修飾變量；修飾方法；修飾類。
+final int&hellip; ; final void&hellip; ；final class A{}.
+不可改變；不可重寫；不可繼承。</p>
+<h4 id="與繼承相同功能的語法-組合">與繼承相同功能的語法： 組合</h4>
+<p>組合能組合多個父類，尤如伊斯蘭教多個老婆結婚，很靈活
+is-a 關系建議用繼承，has-a 關系建議用組合, 建邏輯模型代碼
+Student is a Person, Notebook has a CPU
+class 子類{
+父類對象創建： Person p2 = new Person;
+p2.method();
+}</p>
+<p><strong>小節完；</strong>
+<strong>總結課題：Object類</strong>
+Object類，Object是所有類的父類
+看原碼，IDEA alt+7看類的結構</p>
+<p>==<strong>Equal和==</strong> 常考題==
+<strong>Equal比較對象的hashcode(內存地址)是否相等</strong>
+可以重寫Equal , 用Generate快速重寫實現“值相等”的自定義比較邏輯
+一般只用比較id</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Person</span>(String name, <span style="color:#66d9ef">int</span> age) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">equals</span>(Object obj) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> obj) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (obj <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> getClass() <span style="color:#f92672">!=</span> obj.<span style="color:#a6e22e">getClass</span>()) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        Person person <span style="color:#f92672">=</span> (Person) obj;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> age <span style="color:#f92672">==</span> person.<span style="color:#a6e22e">age</span> <span style="color:#f92672">&amp;&amp;</span> Objects.<span style="color:#a6e22e">equals</span>(name, person.<span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hashCode</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Objects.<span style="color:#a6e22e">hash</span>(name, age);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Super 關鍵字：</strong>
+-通過super關鍵字來調用父類的原始方法。
+-當有參構造器建造時，手動修改隱式Super成這個來顯式調用父類構造器
+-繼承中方法的執行由子類開始向上搜索，再從上向下執行
+-靜態方法相同</p>
+<h3 id="重寫-tostring-方法">重寫 <code>toString</code> 方法</h3>
+<p><code>toString</code> 方法在 <code>Object</code> 類中的預設sout打印時僅返回對象的類名和內存地址例如Person@1a2b3c
+，這對於理解和調試對象不友好(反人類)。重寫 <code>toString</code> 方法可以讓我們更清楚地了解對象要可讀內容，便於打印、日誌記錄和除錯。</p>
+<h4 id="例子">例子</h4>
+<p>在 <code>Person</code> 類中，重寫 <code>toString</code> 可以輸出對象的更具可讀性的描述：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>{
+</span></span><span style="display:flex;"><span>	定義變量和構造方法<span style="color:#960050;background-color:#1e0010">＋</span>setget方法
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span>() {
+</span></span><span style="display:flex;"><span>	    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Person{name=&#39;&#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;, age=&#34;</span> <span style="color:#f92672">+</span> age <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;}&#34;</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//則</span>
+</span></span><span style="display:flex;"><span>Person person <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person(<span style="color:#e6db74">&#34;Alice&#34;</span>, 25);
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(person);  <span style="color:#75715e">// 輸出：Person{name=&#39;Alice&#39;, age=25}</span>
+</span></span></code></pre></div><h3 id="封裝">封裝</h3>
+<p>理念：高內聚、低耦合(僅暴露少量方法)
+例子：手機，自動擋汽車</p>
+<p>實現：
+使用訪問控制符來控制封裝和暴露，盡可能減少訪問權限，提高安全性
+private, default, protected , public
+同一個類&lt;同一個包中&lt;子類&lt;所有類</p>
+<p>兩個細節：</p>
+<ol>
+<li>若父類和子類在同一包中，子類可訪問父類的Protected成員，也可訪問父類對象中的protected成員。</li>
+<li>若不在同一包中，可訪問父類protected成員，但<strong>不可訪問父類對象</strong>中的protected成員</li>
+</ol>
+<h3 id="set-get方法行業規則javabean">Set Get方法行業規則=Javabean</h3>
+<p><strong>項目開發封裝簡單規則：</strong>
+～ 屬性一般使用private訪問權限
+～～屬性私有後，提供相應的get/set方法來訪問相關屬性，這些方法通常是public修飾的，以提供對屬性的賦值與讀取操作（注意：boolean變量的get 方法是is 開頭！）
+<strong>～方法： 一些只用於本類的輔助性方法可以用private修飾，希望其他類調用的方法用public修飾。</strong></p>
+<pre tabindex="0"><code>//屬性私有，方法公開
+private int Id;
+public int getId(){
+	return id;
+}
+public void setId(int id){
+	this.id=id;
+}
+</code></pre><h3 id="javabean-標準類">JavaBean 標準類</h3>
+<p>用於封裝數據，按設計規範的普通Java類，廣泛用於JavaEE中的服務器端組件、GUI開發、Spring框架的依賴注入。</p>
+<h5 id="特點">特點：</h5>
+<p>JavaBean 必須有一個無參的公共構造函數。
+JavaBean 的屬性通常是私有的，這樣可以保護屬性，禁止直接外部訪問，保證封裝性。
+每個屬性通常都有相應的公開 getter 和 setter 方法。
+JavaBean 通常會實現 <code>Serializable</code> 介面，這樣該 JavaBean 的對象就可以被序列化，便於保存或網絡傳輸。
+設計示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">implements</span> java.<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Serializable</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String name;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 無參構造方法</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Person</span>() {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Getter 和 Setter 方法</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getName</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span>(String name) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getAge</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> age;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAge</span>(<span style="color:#66d9ef">int</span> age) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> age;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>`</p>
+<h2 id="多態polymorphism">多態（polymorphism)</h2>
+<p>同一個方法調用，不同對象行為完全不同</p>
+<ol>
+<li>多態是方法的多態，而非屬性的多態（無關）</li>
+<li>多態存在需3個必要條件：繼承，方法重寫，父類引用指向子類對象</li>
+<li>父類引用指向子類對象後，用該父類引用調用子類重寫方法，此時就是多態。</li>
+</ol>
+<p>編釋器只認Animal不認dog的方法</p>
+<p>對象的轉型Cast：
+Dog子類對象指向父類，為向上轉型
+Animal 向下轉型要強制轉型
+Dog d = <strong>(Dog)</strong> animal. // 尤如(int) number;類似的格式；<br>
+自動向上轉型後強制向下轉型讓編譯器認識
+為邏輯嚴謹要判斷animal是不是貓
+Cat c = (Cat)animal;</p>
+<p>if (animal instanceof Cat){
+Cat c=(Cat)animal;
+c.catchMouse();
+}</p>
+<h2 id="抽象方法和抽象類abstract還有接口">抽象方法和抽象類Abstract&ndash;還有接口</h2>
+<h4 id="抽象方法">抽象方法：</h4>
+<p>包含抽象方法的就是抽象類，抽象方法只用改名不用包含方法體，方法體由所繼承的子類去寫。由抽象類裏也能含普通方法，就是一個較寬鬆的規範。</p>
+<ul>
+<li>抽象類不能new實例化，用構造器都不能，只能由子類實現</li>
+<li>抽象類只能用作被繼承(extends), 繼承抽象類的子類必須重寫抽象類的抽象方法</li>
+</ul>
+<h4 id="實現">實現：</h4>
+<p>用abstract修飾符修飾類名和方法
+public abstract class Animal;
+屬性不用 , 如int age</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Shape</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw</span>();
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">displayInfo</span>(){
+</span></span><span style="display:flex;"><span>	System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Shape&#34;</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Circle</span> <span style="color:#66d9ef">extends</span> Shape{
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">@Override</span> 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw</span>(){sout(<span style="color:#e6db74">&#34;Circle&#34;</span>);}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="接口interface">接口interface</h2>
+<p>像type c線一樣有規範但實現不同。
+接口是一組規範，所有實現類都要遵守，是面向對象的精華，幫助抽象不同類的共同點
+接口比&quot;抽象類&quot;還&quot;抽象的&quot;的&quot;抽象類&quot;，只能含有抽象方法
+做系統時往往是&quot;面向接口&quot;的思想來設計系統，接口和實現類不是父子關系，是規則關系
+所有方法默認public abstract</p>
+<h5 id="實現-1">實現：</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>訪問修飾符public<span style="color:#f92672">/</span><span style="color:#66d9ef">default</span>  <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">接口名</span><span style="color:#960050;background-color:#1e0010">＝</span>類名 <span style="color:#960050;background-color:#1e0010">［</span><span style="color:#66d9ef">extends</span> 父接口1<span style="color:#960050;background-color:#1e0010">，</span> 父接口2<span style="color:#960050;background-color:#1e0010">］</span>{
+</span></span><span style="display:flex;"><span>	只有常量非變量定義<span style="color:#960050;background-color:#1e0010">：</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span><span style="color:#960050;background-color:#1e0010">（</span>隱藏<span style="color:#960050;background-color:#1e0010">）</span> <span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span>0;
+</span></span><span style="display:flex;"><span>	方法定義<span style="color:#960050;background-color:#1e0010">：</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#a6e22e">run</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">子類</span> <span style="color:#66d9ef">implements</span> 父類{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">方法</span>(){
+</span></span><span style="display:flex;"><span>     方法體<span style="color:#960050;background-color:#1e0010">；</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>實現類不用extends用implements來連接interface
+接口不能創建實例，但是可用於聲明引用變量類型，再強制向下轉型
+JDK8 以前只能抽象方法，JDK8後允許接口定義默認方法和靜態方法：
+<strong>默認方法</strong>不用必須實現，接口可提供默認方法的實現,子類可以重寫
+default void moren(){
+System.out.print(&ldquo;Test default&rdquo;)
+}
+<strong>靜態方法</strong> 直接從屬於接口，如果子類定義同名的靜態方法，那就是完全不同的方法直接從屬於子類，可由子類名直接調用。</p>
+<p><strong>接口的多繼承</strong>：子接口extends父接口能獲得父接口中的一切</p>
+<p>與抽象方法異同：都是規範子類，接口只能有抽象方法，而且只能常量，修飾符默認public abstract, 繼承用implements，可多繼承，適用於對象能力抽象化因為一個事物總有多個能力要繼承，而抽象類適用於事物抽象化只能被子類只能繼承一個父類。
+以上接口和抽象方法都不能實例化</p>
+<h2 id="面向對象復習課題string">面向對象復習課題：String</h2>
+<p>工作中最常見的類String, 掌握String類常見方法及其底層實現，是開發正確的基礎
+看看源代碼</p>
+<h6 id="常量池">常量池：</h6>
+<p>包含全局字符串常量池、class文件常量池（編釋）、運行時常量池
+因為常量池的原因定義String字符相同對象不同用==會返回false所以用equal
+System.out.println(g1.equals(g3));</p>
+<h2 id="補充內容內部類inner-class">補充內容：內部類inner class</h2>
+<p>把一個類放在另一個類的內部定義，類中類
+要點：
+內部類提供更好封裝，只能讓外部類訪問，同一包中其他類不允許直接訪問。
+內部類可直接訪問外部類的私有屬性，是外部類的成員，但外部類不能訪問內部類的內部屬性。
+注意：內部類一旦編譯成功就會成為完全不同的兩個類，Outer.class和Outer$Inner.class兩個類的字節碼文件，相對獨立。
+<strong>成員變量訪問要點：</strong>
+內部類屬性：this.變量名。
+外部類屬性：外部類名.this.變量名。
+匿名內部類：只用一次的類(安卓經常用)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args){
+</span></span><span style="display:flex;"><span>	內部類類型 t <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> 內部類();
+</span></span><span style="display:flex;"><span>	t.<span style="color:#a6e22e">test1</span>(<span style="color:#66d9ef">new</span> 接口A(){
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">@Override</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">接口run</span>(){
+</span></span><span style="display:flex;"><span>	System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Anoy&#34;</span>);
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	})
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://giiitdavid.github.io/" >
+    &copy;  New DavBlog!~ 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
