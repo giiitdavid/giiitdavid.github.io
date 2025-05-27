@@ -234,57 +234,95 @@ out 是編釋後的java</p>
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2.-java%E5%85%A5%E9%96%80%E5%9F%BA%E7%A4%8E%E9%82%8F%E8%BC%AF%E5%8A%9F%E8%83%BD/" class="color-inherit dim link">
+          <a href="/posts/1.-%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/" class="color-inherit dim link">
             
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          <blockquote>
-<p>腦中能把流程圖和代碼轉換起來</p></blockquote>
-<h4 id="變量--順序略-條件判斷選擇結構">變量 + 順序（略）, 條件判斷(選擇結構)：</h4>
-<p>只筆記switch，面對多值時使用:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">switch</span>(表達式){ <span style="color:#75715e">//表達式是int等(long不行)</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> 1: <span style="color:#75715e">//表達式的值為1時，char字符也行</span>
-</span></span><span style="display:flex;"><span>		action1;
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">[</span><span style="color:#66d9ef">break</span><span style="color:#f92672">]</span>;<span style="color:#75715e">//可選跳出,否則執行action2</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">case</span> 2:
-</span></span><span style="display:flex;"><span>		action2;
-</span></span><span style="display:flex;"><span>		<span style="color:#f92672">[</span><span style="color:#66d9ef">break</span><span style="color:#f92672">]</span>;
-</span></span><span style="display:flex;"><span>	... <span style="color:#66d9ef">break</span>;
-</span></span><span style="display:flex;"><span>	<span style="color:#f92672">[</span><span style="color:#66d9ef">default</span>:
-</span></span><span style="display:flex;"><span>		actionDefault;<span style="color:#f92672">]</span> <span style="color:#75715e">//一路操入尸</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="循環結構-人生的一切">循環結構： 人生的一切</h3>
-<p><strong>當型</strong>： 當為true時反復執行某語句，當布爾表達式值為false時停止跳出，如while 與for循環；
-<strong>直到型</strong>： 先執行某語句x再判斷布爾表達式，若true再執行某語句x，反復執行直到為false停止，比如do-while循環。可被while, for替代。</p>
+          <p>技術選型：
+考慮到服務器弱，使用靜態網頁博客框架
+<a href="https://www.luoguoo.com/19700101/%E5%BC%80%E6%BA%90%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94/">开源博客框架对比 | 梦想家罗西的博客</a>
+Hugo 用go語言學習曲線快
+有前端基础，会<code>Markdown</code>、会<code>HTML</code>和<code>CSS</code>，选择 <a href="https://link.segmentfault.com/?enc=Rof%2FD%2FHcwsuSkzrIRBvSaQ%3D%3D.Wc4QuvKBaElW6orx7BiIQmMe32JKHmhmqOY16617mcE%3D">Hexo</a><br>
+有<code>Vue</code>基础可以选择 <a href="https://link.segmentfault.com/?enc=UXNC4bHRG6uA1V0gz7G6yw%3D%3D.2Vccr4WUIHea34dJHF3u%2BCdopw9gq80Ye23cRZfTMoE%3D">vuePress</a> 或者 <a href="https://link.segmentfault.com/?enc=0UI%2FtE%2BMPSJSG48hR9hOJQ%3D%3D.kZZhmNh1fCXId%2F6FgpfFF0403ijacBvifiZdGFyXQq0%3D">vitePress</a><br>
+会<code>Go</code>可以选择 <a href="https://link.segmentfault.com/?enc=fRNObIdftrazCHdLuSzMFA%3D%3D.Ir6rt5QQmacLw81E74asJEmVzakkUnDOV%2F86%2BMRQcos%3D">Hugo</a><br>
+会<code>Rust</code>可以选择 <a href="https://link.segmentfault.com/?enc=ZiLZBsYHNnjnTLAdOKMCQA%3D%3D.yN0fNNRksbkuLX49i3PJJbkXgcV66l8ePNWTrsYhbaM%3D">Zola</a><br>
+会<code>Ruby</code>可以选择 <a href="https://link.segmentfault.com/?enc=y3WhZvyfHsMorGjiL3KFGw%3D%3D.42FLg%2FioN9z5JVeqhvG3Y5mqQVuR9QIQkR3gjDKPyrI%3D">Jekyll</a><br>
+会<code>PHP</code>可以考虑使用 <a href="https://link.segmentfault.com/?enc=S91j02hyESU%2FOQn9vBnsKQ%3D%3D.zdMHuHdU6bnKt6uHDy%2FThLZkaX8Zxt184RM86WsGRnA%3D">WordPress</a>
+Hexo vs Hugo
+• 如果你重视 构建速度 和 多语言支持，并且希望快速上手，Hugo 是更好的选择。• 如果你更倾向于 灵活性 和 丰富的插件生态，并且熟悉 Node.js，Hexo 可能更适合你。如果你是初学者，建议从 Hexo 入手
+同样的 <code>Java</code> 也有类似的内容，看你自己的需求了，成本最低的当然是 <code>hexo</code> 和 <code>hugo</code>，还有 <code>Jekyll</code> 了，配置一下环境就可以了。<code>hexo</code>主题多，<code>hugo</code> 编译快。</p>
+<p><code>PHP</code>和<code>Java</code>之类的需要自建服务器，其他的生成静态页的项目只需要找到一个可以托管文件的服务既可以搭建，一般都有<strong>Web托管</strong>，也有比如说<a href="https://link.segmentfault.com/?enc=nm5DdvFwRJmSFsJu7K878g%3D%3D.18cNZUlALAXUUDPaIMO1eILgtjhv1V%2Bpz965O0SWldc%3D">Github Pages</a>这种免费的服务。</p>
+<h4 id="個人博客頁">個人博客頁</h4>
 <ol>
-<li><strong>while:</strong> 語句應使循環趨向結束，否則是死循環</li>
+<li>
+<p><strong>前端開發</strong>：</p>
+<ul>
+<li>设计博客页面布局，包括文章列表、详情页、评论区域等。</li>
+<li>使用JavaScript实现观看人数统计功能。</li>
+</ul>
+</li>
+<li>
+<p><strong>後端開發</strong>：</p>
+<ul>
+<li>实现文章的增删改查功能。</li>
+<li>处理评论区的数据交互。</li>
+</ul>
+</li>
+<li>
+<p><strong>数据库設計</strong>：</p>
+<ul>
+<li>设计用户表、文章表、评论表等。</li>
+</ul>
+</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(){循環體}
-</span></span></code></pre></div><ol start="2">
-<li><strong>for:</strong> 更完整的while</li>
+<ul>
+<li>
+<h3 id="部署與測試">部署與測試</h3>
+</li>
+</ul>
+<ol>
+<li>
+<p><strong>本地測試</strong>：</p>
+<ul>
+<li>在本地环境运行项目，确保所有功能正常。</li>
+</ul>
+</li>
+<li>
+<p><strong>部署</strong>：</p>
+<ul>
+<li>将项目部署到云服务器，如阿里云、腾讯云等。</li>
+<li>购买域名，配置DNS解析。</li>
+</ul>
+</li>
+<li>
+<p><strong>線上測試</strong>：</p>
+<ul>
+<li>在线上环境进行功能测试、性能测试等。</li>
+</ul>
+</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(初始表達式<span style="color:#960050;background-color:#1e0010">；</span>布爾表達式<span style="color:#960050;background-color:#1e0010">；</span>迭代因子){循環體}
-</span></span></code></pre></div><p>在迭代因子中對數值運算,也可以在循環體中運算
-學到的編程：
-% 以餘數來判斷對某類數的類型；
-println會轉行，print直接後接輸出；</p>
-<p><strong>嵌套循環</strong> 一般兩層 i++. j++
-從一個小套完成找到規律後再套一個循環</p>
-<p><strong>Break 和 Continue語句</strong>： 對while用 if &hellip;break
-Continue  outer 跳到outer: ；相當於C中的goto</p>
-<p>變量命名和向用戶說明和異常處理都是必需注意項</p>
-<ol start="3">
-<li>for-each 循環遍歷集合或數組法
-簡潔但無法靈活操作</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">//for 元素類型 變量名：集合或數組</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (number num:list){
-</span></span><span style="display:flex;"><span>   System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(num);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+<ul>
+<li>
+<h3 id="5-市場推廣與運營">5. 市場推廣與運營</h3>
+</li>
+<li>
+<p>在社交平台、技术社区宣传你的项目。</p>
+</li>
+<li>
+<p>根据用户反馈，不断优化产品功能和体验。</p>
+</li>
+</ul>
+<h3 id="6-持續迭代與更新">6. 持續迭代與更新</h3>
+<ul>
+<li>定期更新项目，修复已知问题，增加新功能。</li>
+<li>关注行业动态，学习新技术，为项目持续发展做好准备。</li>
+</ul>
+<h2 id="docker">Docker</h2>
+<p>yum utils安裝
+<code>yum install -y yum-utils </code></p>
         </div>
-        <a href="/posts/2.-java%E5%85%A5%E9%96%80%E5%9F%BA%E7%A4%8E%E9%82%8F%E8%BC%AF%E5%8A%9F%E8%83%BD/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        <a href="/posts/1.-%E5%8D%9A%E5%AE%A2%E5%BF%AB%E9%80%9F%E9%83%A8%E7%BD%B2/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
       </div>
     </div>
   </div>
@@ -300,6 +338,12 @@ Continue  outer 跳到outer: ；相當於C中的goto</p>
           
           
             <h2 class="f5 fw4 mb4 dib mr3">
+              <a href="/posts/2.-java%E5%85%A5%E9%96%80%E5%9F%BA%E7%A4%8E%E9%82%8F%E8%BC%AF%E5%8A%9F%E8%83%BD/" class="link black dim">
+                
+              </a>
+            </h2>
+          
+            <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/posts/3.-java%E9%9D%A2%E5%90%91%E5%B0%8D%E8%B1%A1%E5%85%A5%E9%96%80/" class="link black dim">
                 
               </a>
@@ -313,12 +357,6 @@ Continue  outer 跳到outer: ；相當於C中的goto</p>
           
             <h2 class="f5 fw4 mb4 dib mr3">
               <a href="/posts/5.-java%E5%9F%BA%E7%A4%8E%E6%B7%B1%E5%8C%96%E9%9B%9C%E9%A0%85/" class="link black dim">
-                
-              </a>
-            </h2>
-          
-            <h2 class="f5 fw4 mb4 dib mr3">
-              <a href="/posts/6.-%E5%8F%8D%E5%B0%84%E6%8A%80%E8%A1%93/" class="link black dim">
                 
               </a>
             </h2>
