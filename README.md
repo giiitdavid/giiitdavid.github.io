@@ -1,2 +1,2 @@
 # giiitdavid.github.io
-is a repository for making blog
+This is a repository for making blog
