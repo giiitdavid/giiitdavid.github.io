@@ -1,0 +1,4 @@
+baseURL = 'https://giiitdavid.github.io/'
+languageCode = 'en-us'
+title = 'New DavBlog!~'
+theme = "ananke"
